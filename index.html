@@ -14,10 +14,10 @@
                 <li>By Character Class
                     <ul>
                         {% for class in site.data.classes %}
-                        <li><a href="/{{class.link}}">{{class.name}}</a>
+                        <li><a href="{{ site.baseurl }}/{{ class.link }}">{{ class.name }}</a>
                             <ul>
                                 {% for race in site.data.races %}
-                                <li><a href="/{{class.link}}/{{race.link}}">{{race.name}}</a></li>
+                                <li><a href="{{ site.baseurl }}/{{ class.link }}/{{ race.link }}">{{ race.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -27,10 +27,10 @@
                 <li>By Character Race
                     <ul>
                         {% for race in site.data.races %}
-                        <li><a href="/{{race.link}}">{{race.name}}</a>
+                        <li><a href="{{ site.baseurl }}/{{ race.link }}">{{ race.name }}</a>
                             <ul>
                                 {% for class in site.data.classes %}
-                                <li><a href="/{{race.link}}/{{class.link}}">{{class.name}}</a></li>
+                                <li><a href="{{ site.baseurl }}/{{ race.link }}/{{ class.link }}">{{ class.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
