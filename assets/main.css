@@ -1,0 +1,41 @@
+.container {  display: grid;
+    grid-template-columns: 0.3fr 0.6fr 2.8fr 0.3fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Header Header Header Header"
+      ". Main Main ."
+      ". Footer Footer .";
+  }
+  
+  .Header {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . .";
+    grid-area: Header;
+  }
+  
+  .Footer { grid-area: Footer; }
+  
+  .Main {  display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Toc Content Content"
+      "Toc Content Content"
+      "Toc Content Content";
+    grid-area: Main;
+  }
+  
+  .Toc { grid-area: Toc; }
+  
+  .Content { grid-area: Content; }
+  
