@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/assets/main.css" type="text/css" media="screen">
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Illustrationg the PHB</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>By Character Class
+                    <ul>
+                        {% for class in site.data.classes %}
+                        <li><a href="/{{class.link}}">{{class.name}}</a>
+                            <ul>
+                                {% for race in site.data.races %}
+                                <li><a href="/{{class.link}}/{{race.link}}">{{race.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>By Character Race
+                    <ul>
+                        {% for race in site.data.races %}
+                        <li><a href="/{{race.link}}">{{race.name}}</a>
+                            <ul>
+                                {% for class in site.data.classes %}
+                                <li><a href="/{{race.link}}/{{class.link}}">{{class.name}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+    </html>
+    </body>
+</html>
+{% assign documents = site.static_files | where: "path", "documents" | where_exp: "file", "file.name contains 'example'" | sort %}
+{% for file in documents %}
+- [{{ file.name }}]({{ file.path }})
+{% endfor %}
