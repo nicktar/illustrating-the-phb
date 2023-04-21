@@ -89,7 +89,3 @@ nav ul ul ul li:hover>a {
 nav ul ul li:hover>ul {
     display: block;
 }
-
-body {
-    background-image: "{{ site.baseurl }}/assets/background.webp";
-}
