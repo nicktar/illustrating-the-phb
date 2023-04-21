@@ -91,5 +91,5 @@ nav ul ul li:hover>ul {
 }
 
 body {
-    background-image: "background.webp";
+    background-image: "{{ site.baseurl }}/assets/background.webp";
 }
