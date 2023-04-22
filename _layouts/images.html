@@ -6,19 +6,19 @@ layout: page
 {% assign secondlevel =  page.url | split: '/' | last  %}
 {% case toplevel %}
     {% when "classes" %}
-        {% assign classes = site.data.classes | where: "link", secondlevel %}
-        {% assign races = site.data.races %}
+        {% assign this_classes = site.data.classes | where: "link", secondlevel %}
+        {% assign this_races = site.data.races %}
     {% when "races" %}
-        {% assign classes = site.data.classes %}
-        {% assign races = site.data.races | where: "link", secondlevel %}
+        {% assign this_classes = site.data.classes %}
+        {% assign this_races = site.data.races | where: "link", secondlevel %}
     {% else %}
-        {% assign classes = site.data.classes | where: "link", toplevel %}
-        {% assign races = site.data.races | where: "link", secondlevel %}
+        {% assign this_classes = site.data.classes | where: "link", toplevel %}
+        {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
 Classes:
-{% for class in classes %}{{class}}{% endfor %}<br />
+{% for class in this_classes %}{{class}}{% endfor %}<br />
 Races:
-{% for race in races %}{{races}}{% endfor %}<br />
+{% for race in this_races %}{{races}}{% endfor %}<br />
 <table>
     <thead>
         <tr>
@@ -30,8 +30,8 @@ Races:
     {% for checkpoint in site.data.checkpoints %}
     <tr>
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
-        {% for class in classes %}
-            {% for race in races %}
+        {% for class in this_classes %}
+            {% for race in this_races %}
                 {% for seed in site.data.seeds %}
                 <td>{{ race }} {{ class }}</td>
                 <td>
