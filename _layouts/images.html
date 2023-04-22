@@ -2,7 +2,7 @@
 layout: page
 ---
 
-{% asign urlparts = page.url | split: '/' %}
+{% assign urlparts = page.url | split: '/' %}
 {% assign toplevel =  urlparts[1]  %}
 {% assign secondlevel =  urlparts[2]  %}
 {{ page.url }}---
