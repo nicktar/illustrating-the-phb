@@ -1,0 +1,5 @@
+female gnome wizard, dungeons and dragons character artwork, masterwork, best quality, ultra high res, 8K, UHD,  photorealistic, scenic fantasy background, focus on character, full body image, (symmetric eyes), (legs)
+Negative prompt: glowing eyes, monochrome, cartoon, back to viewer, extra fingers, 3d, standing on a base:2, garden gnome, chibi, nsfw
+Steps: 100, Sampler: Euler a, CFG scale: 9, Seed: 2889396480, Face restoration: CodeFormer, Size: 512x512, Model hash: da5224a242, Model: aZovyaRPGArtistTools_v2
+Template: female gnome wizard, dungeons and dragons character artwork, masterwork, best quality, ultra high res, 8K, UHD,  photorealistic, scenic fantasy background, focus on character, full body image, (symmetric eyes), (legs)
+Negative Template: glowing eyes, monochrome, cartoon, back to viewer, extra fingers, 3d, standing on a base:2, garden gnome, chibi, nsfw
