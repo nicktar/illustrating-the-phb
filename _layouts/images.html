@@ -51,7 +51,7 @@ layout: page
                     {% assign image_exists = site.assets.images | where: "name", imagename %}
                     {% if image_exists.size != 0 %}
                         {% capture imagepath %}/assets/images/{{imagename}}{% endcapture %}
-                        <img src="{{imagepath | relative_url}}" alt="Malemale {{race.name}} {{class.name}} {{checkpoint.name}} {{seed.seed}}" width = "128px" height = "128px"/>
+                        <img src="{{imagepath | relative_url}}" alt="Male {{race.name}} {{class.name}} {{checkpoint.name}} {{seed.seed}}" width = "128px" height = "128px"/>
                     {% endif %}
                 </td>
                 {% endfor %}
