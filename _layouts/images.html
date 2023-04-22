@@ -16,12 +16,9 @@ layout: page
         {% assign this_classes = site.data.classes | where: "link", toplevel %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
-Classes:
-{% for class in this_classes %}{{class}}{% endfor %}<br />
-{% for class in site.data.classes %}{{class}}{% endfor %}<br />
 Races:
-{% for race in this_races %}{{races}}{% endfor %}<br />
-{% for race in site.data.races %}{{races}}{% endfor %}<br />
+{% for race in this_races %}{{race}}{% endfor %}<br />
+{% for race in site.data.races %}{{races}{% endfor %}<br />
 <table>
     <thead>
         <tr>
