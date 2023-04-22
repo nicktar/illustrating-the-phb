@@ -33,16 +33,7 @@ Races:
         {% for class in classes %}
             {% for race in races %}
                 {% for seed in site.data.seeds %}
-                <td>
-                    {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
-                    {% assign files = assets.images | where: path, imagepath }
-                    {{ files.size }}
-                </td>
-                <td>
-                    {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
-                    {% assign files = assets.images | where: path, imagepath }
-                    {{ files.size }}
-                </td>
+                <td>{{ race }} {{ class }}</td>
                 {% endfor %}
             {% endfor %}
         {% endfor %}
