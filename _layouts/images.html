@@ -32,22 +32,6 @@ Races:
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
         {% for class in classes %}
             {% for race in races %}
-                {% for seed in site.data.seeds %}
-                <td>
-                    {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
-                    {% assign files = assets.images | where: path, imagepath }
-                    {% if files.size != 0 %}
-                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
-                    {% endif %}
-                </td>
-                <td>
-                    {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
-                    {% assign files = assets.images | where: path, imagepath }
-                    {% if files.size > 0 %}
-                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
-                    {% endif %}
-                </td>
-                {% endfor %}
             {% endfor %}
         {% endfor %}
         </tr>
