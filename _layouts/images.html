@@ -36,16 +36,16 @@ layout: page
                     {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {{ imagepath }}
                     {% assign files = assets.images | where: path, imagepath }
-                    {% if  files.size > 0 %}
-                    <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% if files.size > 0 %}
+                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 <td>
                     {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {{ imagepath }}
                     {% assign files = assets.images | where: path, imagepath }
-                    {% if  files.size > 0 %}
-                    <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% if files.size > 0 %}
+                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 {% endfor %}
