@@ -37,9 +37,9 @@
                 <ul>
                     {% for race in site.data.races %}
                     {% capture racelink %}/races/{{ race.link }}{% endcapture %}
-                    <li><a href="{{ racelink | relative_url }}/{{ race.link }}">{{ race.name }}</a>
+                    <li><a href="{{ racelink | relative_url }}">{{ race.name }}</a>
                         <ul>
-                            {% for race in site.data.races %}
+                            {% for class in site.data.classes %}
                             {% capture classracelink %}/{{ class.link }}/{{ race.link }}{% endcapture %}
                             <li><a href="{{ classracelink | relative_url}}">{{ class.name }}</a></li>
                             {% endfor %}
