@@ -16,41 +16,44 @@
     </style>
 </head>
 <body>
-    <div class="header">
-    <h1 class="pagetitle">Illustrating the PHB</h1>
-        <nav class="navigation">
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Home</a></li>
-                <li>By Character Class
-                    <ul>
-                        {% for class in site.data.classes %}
-                        <li><a href="{{ site.baseurl }}/{{ class.link }}">{{ class.name }}</a>
-                            <ul>
-                                {% for race in site.data.races %}
-                                <li><a href="{{ site.baseurl }}/{{ class.link }}/{{ race.link }}">{{ race.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                <li>By Character Race
-                    <ul>
-                        {% for race in site.data.races %}
-                        <li><a href="{{ site.baseurl }}/{{ race.link }}">{{ race.name }}</a>
-                            <ul>
-                                {% for class in site.data.classes %}
-                                <li><a href="{{ site.baseurl }}/{{ race.link }}/{{ class.link }}">{{ class.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
+    <header>
+        <nav>
+        <ul>
+            <li><a href="{{ site.baseurl }}/">Illustrating the PHB</a></li>
+            <li>By Character Class
+                <ul>
+                    {% for class in site.data.classes %}
+                    <li><a href="{{ site.baseurl }}/{{ class.link }}">{{ class.name }}</a>
+                        <ul>
+                            {% for race in site.data.races %}
+                            <li><a href="{{ site.baseurl }}/{{ class.link }}/{{ race.link }}">{{ race.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>By Character Race
+                <ul>
+                    {% for race in site.data.races %}
+                    <li><a href="{{ site.baseurl }}/{{ race.link }}">{{ race.name }}</a>
+                        <ul>
+                            {% for class in site.data.classes %}
+                            <li><a href="{{ site.baseurl }}/{{ race.link }}/{{ class.link }}">{{ class.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
         </nav>
-    </div>
-    <div class="main">content</div>
-    <div class="footer">some footer content</div>
+    </header>
+    
+    <main>content</main>
+    <footer>
+        <a href="#">Contact info</a>
+        <a href="#">Legal info</a>
+      </footer>
     </body>
     </html>
