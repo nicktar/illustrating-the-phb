@@ -1,24 +1,24 @@
 /* Navigation styles */
-nav {
+.navigation {
     background-color: #fff;
     color: #313131;
     font-family: Arial, sans-serif;
     padding: 10px;
 }
 
-nav ul {
+.navigation ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav>ul>li {
+.navigation>ul>li {
     display: inline-block;
     position: relative;
     margin-right: 20px;
 }
 
-nav>ul>li>a {
+.navigation>ul>li>a {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -26,12 +26,12 @@ nav>ul>li>a {
     transition: background-color 0.3s ease-in-out;
 }
 
-nav>ul>li:hover>a {
+.navigation>ul>li:hover>a {
     background-color: #fff;
 }
 
 /* Sub-menu styles */
-nav ul ul {
+.navigation ul ul {
     position: absolute;
     top: 100%;
     left: 0;
@@ -39,29 +39,29 @@ nav ul ul {
     display: none;
 }
 
-nav ul ul li {
+.navigation ul ul li {
     display: block;
     width: 200px;
 }
 
-nav ul ul li a {
+.navigation ul ul li a {
     padding: 10px;
     display: block;
     color: #313131;
     text-decoration: none;
 }
 
-nav ul ul li:hover>a {
+.navigation ul ul li:hover>a {
     background-color: #fff;
 }
 
 /* Show sub-menu on hover */
-nav>ul>li:hover>ul {
+.navigation>ul>li:hover>ul {
     display: block;
 }
 
 /* Third level menu styles */
-nav ul ul ul {
+.navigation ul ul ul {
     position: absolute;
     left: 100%;
     top: 0;
@@ -69,24 +69,24 @@ nav ul ul ul {
     background-color: #fff;
 }
 
-nav ul ul ul li {
+.navigation ul ul ul li {
     display: block;
     width: 200px;
 }
 
-nav ul ul ul li a {
+.navigation ul ul ul li a {
     padding: 10px;
     display: block;
     color: #313131;
     text-decoration: none;
 }
 
-nav ul ul ul li:hover>a {
+.navigation ul ul ul li:hover>a {
     background-color: #fff;
 }
 
 /* Show third level menu on hover */
-nav ul ul li:hover>ul {
+.navigation ul ul li:hover>ul {
     display: block;
 }
 
