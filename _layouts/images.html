@@ -36,16 +36,12 @@ Races:
                 <td>
                     {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {% assign files = assets.images | where: path, imagepath }
-                    {% if files.size != 0 %}
-                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
-                    {% endif %}
+                    {{ files.size }}
                 </td>
                 <td>
                     {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {% assign files = assets.images | where: path, imagepath }
-                    {% if files.size > 0 %}
-                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
-                    {% endif %}
+                    {{ files.size }}
                 </td>
                 {% endfor %}
             {% endfor %}
