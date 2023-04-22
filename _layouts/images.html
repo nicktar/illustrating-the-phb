@@ -3,17 +3,7 @@ layout: page
 ---
 
 {% assign toplevel = {{ page.url | split: '/' | first }} %}
-{% case toplevel %}
-    {% when "classes" %}
-        {% assign classes = site.classes | where: "link", "{{ page.url | split: '/' | last }} %}
-        {% assign races = site.races %}
-    {% when "races" %}
-        {% assign classes = site.classes %}
-        {% assign races = site.races | where: "link", "{{ page.url | split: '/' | last }} %}
-    {% else %}
-        {% assign classes = site.classes | where: "link", "{{ page.url | split: '/' | first }}%}
-        {% assign races = site.races | where: "link", "{{ page.url | split: '/' | last }} %}
-{% endcase %}
+{{ toplevel }}
 <table>
     <tr>
         <th>Checkpoint</th>
