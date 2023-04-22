@@ -25,6 +25,7 @@ layout: page
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
         {% for class in classes %}
             {% for race in races %}
+            <td>{{class}} {{race}}</td>
                 {% for seed in site.data.seeds %}
                 <td>
                     {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
