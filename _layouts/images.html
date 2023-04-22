@@ -14,7 +14,7 @@ layout: page
         {% assign this_classes = site.data.classes %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
     {% else %}
-    Other
+    Other {{ toplevel }}
         {% assign this_classes = site.data.classes | where: "link", toplevel %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
