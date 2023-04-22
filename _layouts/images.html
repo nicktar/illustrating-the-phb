@@ -6,14 +6,14 @@ layout: page
 {% assign secondlevel =  page.url | split: '/' | last  %}
 {% case toplevel %}
     {% when "classes" %}
-        {% assign classes = site.classes | where: "link", secondlevel %}
-        {% assign races = site.races %}
+        {% assign classes = site.data.classes | where: "link", secondlevel %}
+        {% assign races = site.data.races %}
     {% when "races" %}
-        {% assign classes = site.classes %}
-        {% assign races = site.races | where: "link", secondlevel %}
+        {% assign classes = site.data.classes %}
+        {% assign races = site.data.races | where: "link", secondlevel %}
     {% else %}
-        {% assign classes = site.classes | where: "link", toplevel %}
-        {% assign races = site.races | where: "link", secondlevel %}
+        {% assign classes = site.data.classes | where: "link", toplevel %}
+        {% assign races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
 Classes:
 {% for class in classes %}{{class}}{% endfor %}<br />
@@ -33,6 +33,20 @@ Races:
         {% for class in classes %}
             {% for race in races %}
                 {% for seed in site.data.seeds %}
+                <td>
+                    {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
+                    {% assign files = assets.images | where: path, imagepath }
+                    {% if files.size != 0 %}
+                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% endif %}
+                </td>
+                <td>
+                    {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
+                    {% assign files = assets.images | where: path, imagepath }
+                    {% if files.size > 0 %}
+                        <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% endif %}
+                </td>
                 {% endfor %}
             {% endfor %}
         {% endfor %}
