@@ -1,4 +1,26 @@
 ---
 layout: page
 ---
-    content
+<h2>What this is about</h2>
+<p>When I first started using Stable Diffusion, I was blown away by the incredible variety of options available to me. From different prompts to a wide range of available checkpoints, the possibilities for image generation seemed almost endless. However, with so many choices at my disposal, I found myself paralyzed by indecision. In order to overcome this, I decided to experiment with brute-forcing different options.</p>
+
+<p>As a tabletop roleplaying game enthusiast, my focus was on generating avatars and tokens for PCs and NPCs. I began by selecting checkpoints that were specifically tagged for fantasy and RPG genres. Using a basic prompt, I then iterated over every race and class in the D&D 5e Players Handbook, creating four images each - two for female characters and two for male characters. All of these images utilized the same two seeds and a three-word character specification to ensure maximum comparability. The end result was an impressive collection of 216 character images for each checkpoint, providing valuable insight into the knowledge that each checkpoint has about the classes and races in the Players Handbook.</p>
+
+<p>In addition to being a useful tool for generating character images, these checkpoints also offer valuable information on the general aesthetics that are baked into each model. By exploring the different checkpoints available through Stable Diffusion, I was able to gain a better understanding of the strengths and limitations of each model, and how they might be best utilized for my specific needs.</p>
+<p>To keep the focus on the characteristics of the respective checkpoints and not my personal perferences, I tried to keep the prmpt and negative prompt as simple and unspecific as possible. This way the differences between the checkpoints aren't overshadowed by the specificas of the prompt. The negative prompt consists mostly of the usual attempts to overcome the problems stable diffusion has with hands and faces and the fact that a significant part of the images available for training are photos of painted miniatures that are not the intended imaginery here. For the sake of the iamges of gnomes, I also added "garden gnome" to the negative prompt.</p>
+
+<h3>Caveats</h3>
+<p>Some of the checkpoints are also capable of creating NSFW images and for some of those, a simple nswf in the negative prompt doesn't seem to be enough. This seems to happen mainly with checkpoints that don't contain any detailed rpg- or D&D-related training data. If the traning data only contains mal babarians and most of them are bare chested, well... I screened the images generated for those that I consideren NSFW and reran them with a slightly modified prompt putting more emphasis on the SFW nature of the intended result. </p>
+
+<h3>What this is not about</h3>
+I don't want to rank, judge, promote or bash any of the checkpoints and their respective creators. 
+
+<h3>Can I get the prompt?</h3>
+Sure, here it is:
+<pre>
+[gender] [race] [class], dungeons and dragons character portrait, masterwork, best quality, ultra high res, 8K, UHD,  photorealistic, scenic fantasy background, focus on character, full body portrait, (symmetric eyes), (legs)
+Negative prompt: glowing eyes, monochrome, cartoon, back to viewer, extra fingers, 3d, standing on a base:2, garden gnome, chibi, nsfw
+Steps: 100, Sampler: Euler a, CFG scale: 7, Face restoration: CodeFormer, Size: 512x512
+</pre>
+The 2 Seeds are 2889396479 and 2889396480.
+
