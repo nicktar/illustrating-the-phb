@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 <table>
     <tr>
         <th>Checkpoint</th>
@@ -6,11 +10,22 @@
     {% for checkpoint in site.data.checkpoints %}
     <tr>
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
-        {% for seed in site.data.seeds %}
-        <td>
-            {% if site.images | where: "path", "female-{{ race }}-{{ class }}-{{checkpoint.filename}}-{{ seed.seed}}.webp" | size > 0 %}
-            <img src="{{site.baseurl}}/female-{{ race }} - {{ class }}-{{checkpoint.filename}}-{{ seed.seed}}.webp" alt="female {{ race }} {{ class }} {{checkpoint.filename}} {{ seed.seed}}" />
-            {% endif %}
-        </td>
-    </tr>
+        {% for class in page.classes %}
+            {% for race in page.races %}
+                {% for seed in site.data.seeds %}
+                <td>
+                    {% if site.images | where: "path", "female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
+                    <img src="{{site.baseurl}}/female-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% endif %}
+                </td>
+                <td>
+                    {% if site.images | where: "path", "male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
+                    <img src="{{site.baseurl}}/male-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% endif %}
+                </td>
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
 </table>
