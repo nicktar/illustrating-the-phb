@@ -5,12 +5,13 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
+    opacity: 90%;
   }
   
   nav ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
   }
   
   nav li {
@@ -24,7 +25,7 @@ header {
     top: 100%;
     left: 0;
     background-color: white;
-    padding: 0;
+    padding: 5px;
     margin: 0;
     z-index: 2;
   }
@@ -42,7 +43,7 @@ header {
     position: absolute;
     left: 100%;
     top: 0;
-    padding: 0;
+    padding: 5px;
     margin: 0;
     z-index: 2;
   }
@@ -81,6 +82,7 @@ header {
     position: fixed;
     overflow: auto;
     width: 90%;
+    opacity: 90%;
   }
   
   .content {
@@ -94,5 +96,6 @@ header {
     width: 100%;
     background-color: white;
     padding: 10px;
+    opacity: 90%;
   }
   
