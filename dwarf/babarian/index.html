@@ -6,5 +6,6 @@ classes: - name: Babarian
            link: babarian
 ---
 
-{{ page.url | split: '/' | last | first }}
-{{ page.url | split: '/' | last }}
+A: {{ page.url | split: '/' | last | first }}
+B: {{ page.url | split: '/' | last }}
+{{ page.url}}
