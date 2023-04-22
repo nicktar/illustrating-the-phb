@@ -2,18 +2,18 @@
 layout: page
 ---
 
-{% assign toplevel = {{ page.url | split: '/' | first }} %}
-{% assign secondlevel = {{ page.url | split: '/' | last }} %}
+{% assign toplevel =  page.url | split: '/' | first  %}
+{% assign secondlevel =  page.url | split: '/' | last  %}
 {% case toplevel %}
     {% when "classes" %}
-        {% assign classes = site.classes | where: "link", "{{ secondlevel }}" %}
+        {% assign classes = site.classes | where: "link", secondlevel %}
         {% assign races = site.races %}
     {% when "races" %}
         {% assign classes = site.classes %}
-        {% assign races = site.races | where: "link", "{{ secondlevel }}" %}
+        {% assign races = site.races | where: "link", secondlevel %}
     {% else %}
-        {% assign classes = site.classes | where: "link", "{{ toplevel }}" %}
-        {% assign races = site.races | where: "link", "{{ secondlevel }}" %}
+        {% assign classes = site.classes | where: "link", toplevel %}
+        {% assign races = site.races | where: "link", secondlevel %}
 {% endcase %}
 <table>
     <tr>
@@ -27,13 +27,17 @@ layout: page
             {% for race in races %}
                 {% for seed in site.data.seeds %}
                 <td>
-                    {% if assets.images | where: "path", "female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
-                    <img src="{{site.baseurl}}/assets/female-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
+                    {{ imagepath }}
+                    {% if assets.images | where: "path", imagepath | size > 0 %}
+                    <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 <td>
-                    {% if site.assets | where: "path", "male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
-                    <img src="{{site.baseurl}}/assets/male-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
+                    {{ imagepath }}
+                    {% if assets.images | where: "path", imagepath | size > 0 %}
+                    <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 {% endfor %}
