@@ -6,6 +6,7 @@ layout: page
 {% assign secondlevel =  page.url | split: '/' | last  %}
 {{ page.url }}---
 {{ page.url | split: '/' }}---
+{{ page.url | split: '/' | first }}---
 {% case toplevel %}
     {% when "classes" %}
     Classes found
