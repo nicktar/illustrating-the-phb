@@ -36,8 +36,8 @@
                     {% for race in site.data.races %}
                     <li><a href="{{'/races' | relative_url }}/{{ race.link }}">{{ race.name }}</a>
                         <ul>
-                            {% for race in site.data.races %}
-                            <li><a href="{{'/' | relative_url}}{{ class.link }}/{{ race.link }}">{{ race.name }}</a></li>
+                            {% for class in site.data.classes %}
+                            <li><a href="{{'/' | relative_url}}{{ class.link }}/{{ race.link }}">{{ class.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>

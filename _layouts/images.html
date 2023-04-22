@@ -16,13 +16,18 @@ layout: page
         {% assign races = site.races | where: "link", secondlevel %}
 {% endcase %}
 <table>
-    <tr>
+    <thead>
+        <tr>
         <th>Checkpoint</th>
         <th>Images</th>
     </tr>
+    </thead>
+    <tbody>
     {% for checkpoint in site.data.checkpoints %}
     <tr>
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
+        {{ classes }}
+        {{ races }}
         {% for class in classes %}
             {% for race in races %}
             <td>{{class}} {{race}}</td>
@@ -46,5 +51,6 @@ layout: page
         {% endfor %}
         </tr>
     {% endfor %}
+</tbody>
 </table>
 {{ content }}
