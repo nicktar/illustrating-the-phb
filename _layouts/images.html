@@ -32,7 +32,7 @@ layout: page
                 {% for seed in site.data.seeds %}
                 <td>
                     {% capture imagename %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp{% endcapture %}
-                    {% assign image_exists = site.assets.images | where "name", imagename %}
+                    {% assign image_exists = site.assets.images | where: "name", imagename %}
                     {%if image_exists.size != 0 %}
                         {% capture imagepath %}/assets/images/{{imagename}}{% endcapture %}
                         <img src="{{imagepath | relative_url}}" alt="Female {{race.name}} {{class.name}} {{checkpoint.name}} {{seed.seed}}" width = "128px" height = "128px"/>
