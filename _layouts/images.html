@@ -4,6 +4,8 @@ layout: page
 
 {% assign toplevel =  page.url | split: '/' | first  %}
 {% assign secondlevel =  page.url | split: '/' | last  %}
+{{ page.url }}---
+{{ page.url | split: '/' }}---
 {% case toplevel %}
     {% when "classes" %}
     Classes found
@@ -14,7 +16,7 @@ layout: page
         {% assign this_classes = site.data.classes %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
     {% else %}
-    Other {{ toplevel }}
+    Other -{{ toplevel }}-
         {% assign this_classes = site.data.classes | where: "link", toplevel %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
