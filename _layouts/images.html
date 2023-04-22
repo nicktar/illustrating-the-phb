@@ -2,6 +2,18 @@
 layout: page
 ---
 
+{% assign toplevel = {{ page.url | split: '/' | first }} %}
+{% case toplevel %}
+    {% when "classes" %}
+        {% assign classes = site.classes | where: "link", "{{ page.url | split: '/' | last }} %}
+        {% assign races = site.races %}
+    {% when "races" %}
+        {% assign classes = site.classes %}
+        {% assign races = site.races | where: "link", "{{ page.url | split: '/' | last }} %}
+    {% else %}
+        {% assign classes = site.classes | where: "link", "{{ page.url | split: '/' | first }}%}
+        {% assign races = site.races | where: "link", "{{ page.url | split: '/' | last }} %}
+{% endcase %}
 <table>
     <tr>
         <th>Checkpoint</th>
@@ -10,8 +22,8 @@ layout: page
     {% for checkpoint in site.data.checkpoints %}
     <tr>
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
-        {% for class in page.classes %}
-            {% for race in page.races %}
+        {% for class in classes %}
+            {% for race in races %}
                 {% for seed in site.data.seeds %}
                 <td>
                     {% if site.images | where: "path", "female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}

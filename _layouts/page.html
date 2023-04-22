@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="{{'/assets/main.css' | relative_url}}" type="text/css" media="screen">
     <meta charset="UTF-8">
     <title>Illustrating the PHB</title>
     <style>
@@ -16,15 +16,15 @@
     <header>
         <nav>
         <ul>
-            <li><a href="{{ site.baseurl }}/ ">Illustrating the PHB</a></li>
-            <li><a href="{{ site.baseurl }}/news ">News</a></li>
+            <li><a href="{{'/' | relative_url}} ">Illustrating the PHB</a></li>
+            <li><a href="{{'/news' | relative_url}}">News</a></li>
             <li>By Character Class
                 <ul>
                     {% for class in site.data.classes %}
-                    <li><a href="{{ site.baseurl }}/{{ class.link }} ">{{ class.name }}</a>
+                    <li><a href="{{'/classes/{{ class.link }}' | relative_url}} ">{{ class.name }}</a>
                         <ul>
                             {% for race in site.data.races %}
-                            <li><a href="{{ site.baseurl }}/{{ class.link }}/{{ race.link }} ">{{ race.name }}</a></li>
+                            <li><a href="{{'/{{ class.link }}/{{ race.link }}' | relative_url}}">{{ race.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -34,10 +34,10 @@
             <li>By Character Race
                 <ul>
                     {% for race in site.data.races %}
-                    <li><a href="{{ site.baseurl }}/{{ race.link }} ">{{ race.name }}</a>
+                    <li><a href="{{'/races/{{ race.link }}' | relative_url}} ">{{ race.name }}</a>
                         <ul>
                             {% for class in site.data.classes %}
-                            <li><a href="{{ site.baseurl }}/{{ race.link }}/{{ class.link }} ">{{ class.name }}</a></li>
+                            <li><a href="{{'/{{ class.link }}/{{ race.link }}' | relative_url}}">{{ class.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
