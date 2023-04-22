@@ -15,6 +15,10 @@ layout: page
         {% assign classes = site.classes | where: "link", toplevel %}
         {% assign races = site.races | where: "link", secondlevel %}
 {% endcase %}
+Classes:
+{% for class in classes %}{{class}}{% endfor %}<br />
+Races:
+{% for race in races %}{{races}}{% endfor %}<br />
 <table>
     <thead>
         <tr>
@@ -26,16 +30,13 @@ layout: page
     {% for checkpoint in site.data.checkpoints %}
     <tr>
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
-        {{ classes }}
-        {{ races }}
         {% for class in classes %}
             {% for race in races %}
-            <td>{{class}} {{race}}</td>
                 {% for seed in site.data.seeds %}
                 <td>
                     {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {% assign files = assets.images | where: path, imagepath }
-                    {% if files.size > 0 %}
+                    {% if files.size != 0 %}
                         <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
