@@ -32,6 +32,8 @@ Races:
         <td><a href="{{checkpoint.link}}">{{checkpoint.name}}</a></td>
         {% for class in classes %}
             {% for race in races %}
+                {% for seed in site.data.seeds %}
+                {% endfor %}
             {% endfor %}
         {% endfor %}
         </tr>
