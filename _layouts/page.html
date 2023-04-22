@@ -34,10 +34,10 @@
             <li>By Character Race
                 <ul>
                     {% for race in site.data.races %}
-                    <li><a href="{{'/races/{{ race.link }}' | relative_url}} ">{{ race.name }}</a>
+                    <li><a href="{{/races/{{ race.link }} | relative_url}} ">{{ race.name }}</a>
                         <ul>
                             {% for class in site.data.classes %}
-                            <li><a href="{{'/{{ class.link }}/{{ race.link }}' | relative_url}}">{{ class.name }}</a></li>
+                            <li><a href="{{/{{ class.link }}/{{ race.link }} | relative_url}}">{{ class.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>

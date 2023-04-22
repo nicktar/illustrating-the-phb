@@ -27,13 +27,13 @@ layout: page
             {% for race in races %}
                 {% for seed in site.data.seeds %}
                 <td>
-                    {% if site.images | where: "path", "female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
-                    <img src="{{site.baseurl}}/female-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% if assets.images | where: "path", "female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
+                    <img src="{{site.baseurl}}/assets/female-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 <td>
-                    {% if site.images | where: "path", "male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
-                    <img src="{{site.baseurl}}/male-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
+                    {% if site.assets | where: "path", "male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" | size > 0 %}
+                    <img src="{{site.baseurl}}/assets/male-{{ race.link }} - {{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 {% endfor %}
