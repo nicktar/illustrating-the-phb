@@ -2,11 +2,11 @@
 layout: page
 ---
 
-{% assign toplevel =  page.url | split: '/' | first  %}
-{% assign secondlevel =  page.url | split: '/' | last  %}
+{% asign urlparts = page.url | split: '/' %}
+{% assign toplevel =  urlparts[1]  %}
+{% assign secondlevel =  urlparts[2]  %}
 {{ page.url }}---
 {{ page.url | split: '/' }}---
-{{ page.url | split: '/' | first }}---
 {% case toplevel %}
     {% when "classes" %}
     Classes found
