@@ -30,14 +30,14 @@ layout: page
                 <td>
                     {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {{ imagepath }}
-                    {% if assets.images | where: "path", imagepath | size > 0 %}
+                    {% if assets.images | where: path, imagepath | size > 0 %}
                     <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Female {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
                 <td>
                     {% capture imagepath %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture%}
                     {{ imagepath }}
-                    {% if assets.images | where: "path", imagepath | size > 0 %}
+                    {% if assets.images | where: path, imagepath | size > 0 %}
                     <img src="{{site.baseurl}}/assets/images/{{ imagepath }}" alt="Male {{ race.name }} {{ class.name }} {{checkpoint.name}} {{ seed.seed}}" />
                     {% endif %}
                 </td>
