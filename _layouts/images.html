@@ -34,6 +34,10 @@ Races:
             {% for race in races %}
                 {% for seed in site.data.seeds %}
                 <td>{{ race }} {{ class }}</td>
+                <td>
+                    {% capture imagepath %}female-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp"{% endcapture %}
+                    {{ imagepath }}
+                </td>
                 {% endfor %}
             {% endfor %}
         {% endfor %}
