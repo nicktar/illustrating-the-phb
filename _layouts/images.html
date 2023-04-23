@@ -16,7 +16,6 @@ layout: page
         {% assign this_classes = site.data.classes | where: "link", toplevel %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
-File Data {% assign test = site.assets.images | first %} {{ test |insprec }}
 
 <table>
     <thead>
@@ -52,7 +51,6 @@ File Data {% assign test = site.assets.images | first %} {{ test |insprec }}
                     {% capture imagename %}male-{{ race.link }}-{{ class.link }}-{{checkpoint.filename}}-{{ seed.seed }}.webp{% endcapture %}
                     {% assign image_exists = site.assets.images | where: "name", imagename %}
                     {% if image_exists.size != 0 %}
-                    {{ image_exists }} -- {{image_exists.size}}
                         {% capture imagepath %}/assets/images/{{imagename}}{% endcapture %}
                         <img src="{{imagepath | relative_url}}" alt="Male {{race.name}} {{class.name}} {{checkpoint.name}} {{seed.seed}}" width = "128px" height = "128px"/>
                     {% endif %}
