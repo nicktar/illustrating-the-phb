@@ -16,7 +16,7 @@ layout: page
         {% assign this_classes = site.data.classes | where: "link", toplevel %}
         {% assign this_races = site.data.races | where: "link", secondlevel %}
 {% endcase %}
-File Data {% assign test site.assets.images | first %} {{ test}}
+File Data {% assign test = site.assets.images | first %} {{ test}}
 
 <table>
     <thead>
